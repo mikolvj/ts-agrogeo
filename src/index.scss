@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+	.menuItem {
+		@apply mx-2 p-2 cursor-pointer relative after:duration-300 after:content-[""] after:h-[2px] after:w-0 after:bg-primary after:absolute after:bottom-0.5 after:left-[10%] hover:after:w-4/5;
+	}
+}

@@ -18,8 +18,8 @@ const chooseIcon = (n: Icons) => {
 const Badges: React.FC = () => {
 	return (
 		<Grid container className='max-w-5xl mx-auto'>
-			{badges.map((badge) => (
-				<Grid item xs={10} md={4} className='mx-auto'>
+			{badges.map((badge, index) => (
+				<Grid item xs={10} md={4} key={index} className='mx-auto'>
 					<Stack
 						direction='column'
 						justifyContent='center'
@@ -33,14 +33,14 @@ const Badges: React.FC = () => {
 							variant='button'
 							component='h3'
 							align='center'
-							className='text-black font-bold mt-4'
+							className='text-white font-bold mt-4'
 						>
 							{badge.title}
 						</Typography>
 						<Typography
 							variant='subtitle1'
 							align='center'
-							className='mt-4 text-gray-600'
+							className='mt-4 text-slate-100'
 						>
 							{badge.description}
 						</Typography>

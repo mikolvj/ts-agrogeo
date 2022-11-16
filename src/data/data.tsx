@@ -1,7 +1,15 @@
-export const hero: { heading: string; description: string; cta: string } = {
-	heading: 'Tekst',
-	description: 'Podpis pod tekstem',
-	cta: 'wycena',
+export type Icons = 'favorite' | 'watch' | 'star';
+
+export const hero: {
+	headingFirstLine: string;
+	headingSecondLine: string;
+	headingThirdLine: string;
+	cta: string;
+} = {
+	headingFirstLine: 'Klasyfikacja gruntów',
+	headingSecondLine: 'Geodezja',
+	headingThirdLine: 'Badania gleby',
+	cta: 'kontakt',
 };
 
 export const pros: { heading: string; description: string } = {
@@ -9,49 +17,53 @@ export const pros: { heading: string; description: string } = {
 	description: 'Najważniejsze cechy wyróżniające naszą pracę',
 };
 
-export type Icons = 'favorite' | 'watch' | 'star';
-
-export const badges: { icon: Icons; title: string; description: string }[] = [
+export const badges: {
+	icon: 'favorite' | 'watch' | 'star';
+	title: string;
+	description: string;
+}[] = [
 	{
 		icon: 'favorite',
-		title: 'z pasją',
-		description:
-			'Wszystkie usługi świadczymy z największą starannością i dbałością o szczegóły.',
+		title: 'sumiennie',
+		description: 'Wszystkie zlecenia realizujemy z pasją i zgodnie ze sztuką.',
 	},
 	{
 		icon: 'star',
 		title: 'profesjonalnie',
-		description:
-			'Wszystkie usługi świadczymy z największą starannością i dbałością o szczegóły.',
+		description: 'W pracy wykorzystujemy nowoczesny, renomowany sprzęt.',
 	},
 	{
 		icon: 'watch',
 		title: 'terminowo',
-		description:
-			'Wszystkie usługi świadczymy z największą starannością i dbałością o szczegóły.',
+		description: 'Bardzo ważna jest dla nas realizacja w wyznaczonym czasie.',
 	},
 ];
 
 export const services: { heading: string; description: string } = {
-	heading: 'Zakres oferowanych usług',
+	heading: 'Zakres usług',
 	description:
-		'Oferujemy szeroki wachlarz usług. Nie widzisz potrzebnej pozycji na liście? Skontaktuj się z nami! Postaramy się znaleźć rozwiązanie.',
+		'Większość z oferowanych usług realizujemy na terenie całej Polski',
 };
 
 export const servicesCards: { title: string; content: string }[] = [
 	{
-		title: 'Klasyfikacja gruntów',
+		title: 'Badania gruntu',
 		content:
-			'Oferujemy pełny zakres usług związanych z klasyfikacją gruntów. Sklasyfikujemy każdy rodzaj gruntu. Klasyfikowanie gruntów to przedmiot naszych działań. Zajmujemy się profesjonalną klasyfikacją gruntów.',
+			'Badania gleby na zwartość: wapna, magnezu, fosforu, potasu (pH, Mg, P, K) oraz manganu, cynku, miedzi, żelaza.',
 	},
 	{
 		title: 'Klasyfikacja gruntów',
 		content:
-			'Oferujemy pełny zakres usług związanych z klasyfikacją gruntów. Sklasyfikujemy każdy rodzaj gruntu. Klasyfikowanie gruntów to przedmiot naszych działań. Zajmujemy się profesjonalną klasyfikacją gruntów.',
+			'Zmiana klasy gruntu, aktualizacja użytku gruntowego zgodnie ze stanem faktycznym.',
 	},
 	{
-		title: 'Klasyfikacja gruntów',
+		title: 'Geodezja',
 		content:
-			'Oferujemy pełny zakres usług związanych z klasyfikacją gruntów. Sklasyfikujemy każdy rodzaj gruntu. Klasyfikowanie gruntów to przedmiot naszych działań. Zajmujemy się profesjonalną klasyfikacją gruntów.',
+			'Aktualizacja Ewidencji Gruntów i Budynków, pomiary sytuacyjno-wysokościowe, wytyczenia.',
+	},
+	{
+		title: 'Druk wielkoformatowy',
+		content:
+			'Aktualizacja Ewidencji Gruntów i Budynków, pomiary sytuacyjno-wysokościowe, wytyczenia.',
 	},
 ];

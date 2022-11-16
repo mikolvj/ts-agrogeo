@@ -1,18 +1,23 @@
 import { StyledEngineProvider, CssBaseline } from '@mui/material';
 import { ThemeProvider } from '@mui/material/styles';
 import theme from 'assets/theme';
-import Home from 'views/Home';
+import HomePage from 'views/HomePage';
+import ContactPage from 'views/ContactPage';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 const App: React.FC = () => {
 	return (
-		<>
+		<Router>
 			<StyledEngineProvider injectFirst>
 				<ThemeProvider theme={theme}>
 					<CssBaseline />
-					<Home />
+					<Routes>
+						<Route path='/' element={<HomePage />} />
+						<Route path='/kontakt' element={<ContactPage />} />
+					</Routes>
 				</ThemeProvider>
 			</StyledEngineProvider>
-		</>
+		</Router>
 	);
 };
 
