@@ -1,31 +1,29 @@
-import { Grid, Stack, Avatar, Typography } from '@mui/material';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import StarIcon from '@mui/icons-material/Star';
-import WatchLaterIcon from '@mui/icons-material/WatchLater';
-import { badges, Icons } from 'data/data';
+import Avatar from '@mui/material/Avatar';
+import Grid from '@mui/material/Grid';
+import Stack from '@mui/material/Stack';
+import Typography from '@mui/material/Typography';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import StarBorderIcon from '@mui/icons-material/StarBorder';
+import ScheduleIcon from '@mui/icons-material/Schedule';
+import { home, Icons } from 'data/data';
 
 const chooseIcon = (n: Icons) => {
 	switch (n) {
 		case 'favorite':
-			return <FavoriteIcon fontSize='large' />;
+			return <FavoriteBorderIcon fontSize='large' />;
 		case 'watch':
-			return <WatchLaterIcon fontSize='large' />;
+			return <ScheduleIcon fontSize='large' />;
 		case 'star':
-			return <StarIcon fontSize='large' />;
+			return <StarBorderIcon fontSize='large' />;
 	}
 };
 
 const Badges: React.FC = () => {
 	return (
 		<Grid container className='max-w-5xl mx-auto'>
-			{badges.map((badge, index) => (
+			{home.pros.cards.map((badge, index) => (
 				<Grid item xs={10} md={4} key={index} className='mx-auto'>
-					<Stack
-						direction='column'
-						justifyContent='center'
-						alignItems='center'
-						className='p-4 mb-12'
-					>
+					<Stack className='p-4 mb-12 flex flex-col justify-center items-center'>
 						<Avatar className='bg-primary h-16 w-16'>
 							{chooseIcon(badge.icon)}
 						</Avatar>
@@ -42,7 +40,7 @@ const Badges: React.FC = () => {
 							align='center'
 							className='mt-4 text-slate-100'
 						>
-							{badge.description}
+							{badge.copy}
 						</Typography>
 					</Stack>
 				</Grid>

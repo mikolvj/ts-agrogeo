@@ -1,21 +1,16 @@
-import { Stack } from '@mui/material';
+import Stack from '@mui/material/Stack';
 import { NavLink } from 'react-router-dom';
 
 interface HeaderLogoProps {
 	isScroll: boolean;
-	isHero: boolean;
 }
 
-const HeaderLogo: React.FC<HeaderLogoProps> = ({ isScroll, isHero }) => {
+const HeaderLogo: React.FC<HeaderLogoProps> = ({ isScroll }) => {
 	return (
 		<NavLink to='/'>
 			<Stack className='text-5xl font-bold'>
 				<img
-					src={
-						isScroll || !isHero
-							? require('assets/img/logo-b.png')
-							: require('assets/img/logo.png')
-					}
+					src={require('assets/img/agrogeo.png')}
 					alt='logo'
 					className={`${
 						isScroll ? 'mt-0' : '-mt-3'

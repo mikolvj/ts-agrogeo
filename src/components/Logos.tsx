@@ -1,47 +1,38 @@
-import { Container, Stack, Typography } from '@mui/material';
-import { pros } from 'data/data';
+import Container from '@mui/material/Container';
+import Stack from '@mui/material/Stack';
+import Typography from '@mui/material/Typography';
+import { home } from 'data/data';
 
 const Logos: React.FC = () => {
 	return (
 		<Container className='w-full mt-24'>
-			<Stack
-				justifyContent='center'
-				alignItems='center'
-				className=' text-black'
-			>
+			<Stack className=' text-black justify-center items-center'>
 				<Typography
 					variant='h4'
 					component='h2'
 					className='font-bold max-w-2xl text-center'
 					gutterBottom
 				>
-					Zaufali nam
+					{home.logos.title}
 				</Typography>
-				<Typography className='text-slate-600 mb-12'>
-					{pros.description}
+				<Typography className='text-slate-600 mb-12 text-center'>
+					{home.logos.copy}
 				</Typography>
-				<Stack
-					justifyContent='center'
-					alignItems='center'
-					direction='row'
-					sx={{ flexWrap: 'wrap' }}
-					gap={4}
-					className='max-w-full overflow-hidden mb-12'
-				>
+				<Stack className='justify-center items-center flex-row flex-wrap gap-4 max-w-full overflow-hidden mb-12'>
 					<img
 						src={require('assets/img/logo-1.png')}
 						alt='logo powiatu kępińskiego'
-						className='h-20 sm:h-40 opacity-50 mx-2 sm:mx-4 mb-12'
+						className='logoItem'
 					/>
 					<img
-						src={require('assets/img/logo-1.png')}
-						alt='logo powiatu kępińskiego'
-						className='h-20 sm:h-40 opacity-50 mx-2 sm:mx-4 mb-12'
+						src={require('assets/img/logo-3.png')}
+						alt='herb Ostrzeszowa'
+						className='logoItem'
 					/>
 					<img
-						src={require('assets/img/logo-1.png')}
-						alt='logo powiatu kępińskiego'
-						className='h-20 sm:h-40 opacity-50 mx-2 sm:mx-4 mb-12'
+						src={require('assets/img/logo-2.png')}
+						alt='logo gminy Gilowice'
+						className='logoItem'
 					/>
 				</Stack>
 			</Stack>

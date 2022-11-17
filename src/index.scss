@@ -6,4 +6,7 @@
 	.menuItem {
 		@apply mx-2 p-2 cursor-pointer relative after:duration-300 after:content-[""] after:h-[2px] after:w-0 after:bg-primary after:absolute after:bottom-0.5 after:left-[10%] hover:after:w-4/5;
 	}
+	.logoItem {
+		@apply h-20 sm:h-40 opacity-50 mx-2 sm:mx-4 mb-12;
+	}
 }

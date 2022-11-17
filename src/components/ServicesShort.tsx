@@ -1,17 +1,16 @@
-import {
-	Button,
-	Paper,
-	Stack,
-	Grid,
-	Typography,
-	Card,
-	CardContent,
-	Box,
-	Divider,
-} from '@mui/material';
-import { services, servicesCards } from 'data/data';
+import Button from '@mui/material/Button';
+import Paper from '@mui/material/Paper';
+import Stack from '@mui/material/Stack';
+import Grid from '@mui/material/Grid';
+import Typography from '@mui/material/Typography';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import Box from '@mui/material/Box';
+import Divider from '@mui/material/Divider';
+import { NavLink } from 'react-router-dom';
+import { home } from 'data/data';
 
-const Services: React.FC = () => {
+const ServicesShort: React.FC = () => {
 	return (
 		<Paper
 			elevation={0}
@@ -24,14 +23,14 @@ const Services: React.FC = () => {
 					component='h2'
 					className='font-bold max-w-2xl text-center mt-24'
 				>
-					{services.heading}
+					{home.servicesShort.title}
 				</Typography>
 				<Typography className='text-slate-600 mt-2 mb-12 px-8 max-w-2xl text-center'>
-					{services.description}
+					{home.servicesShort.copy}
 				</Typography>
 			</Stack>
 			<Grid container className='max-w-5xl mx-auto justify-center'>
-				{servicesCards.map((card, index) => (
+				{home.servicesShort.cards.map((card, index) => (
 					<Grid item xs={10} md={5} lg={3} className='mx-auto' key={index}>
 						<Box className='text-left m-4 mb-16'>
 							<Card className='md:min-h-[10rem] lg:min-h-[13rem] flex flex-column items-start justify-start bg-slate-50'>
@@ -46,22 +45,24 @@ const Services: React.FC = () => {
 										</Typography>
 									</Box>
 									<Divider className='my-4' />
-									<Typography variant='body2'>{card.content}</Typography>
+									<Typography variant='body2'>{card.copy}</Typography>
 								</CardContent>
 							</Card>
 						</Box>
 					</Grid>
 				))}
 			</Grid>
-			<Button
-				variant='contained'
-				color='primary'
-				className='bg-primary mx-auto'
-			>
-				zobacz więcej
-			</Button>
+			<NavLink to='/uslugi'>
+				<Button
+					variant='contained'
+					color='primary'
+					className='bg-primary text-white mx-auto'
+				>
+					zobacz więcej
+				</Button>
+			</NavLink>
 		</Paper>
 	);
 };
 
-export default Services;
+export default ServicesShort;

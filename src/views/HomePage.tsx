@@ -4,14 +4,14 @@ import Hero from 'components/Hero';
 import Logos from 'components/Logos';
 import Navigation from 'components/Navigation';
 import Pros from 'components/Pros';
-import Services from 'components/Services';
+import ServicesShort from 'components/ServicesShort';
 
 const HomePage: React.FC = () => {
 	return (
 		<>
-			<Navigation isHero={true}/>
+			<Navigation isHero={true} />
 			<Hero />
-			<Services />
+			<ServicesShort />
 			<Pros />
 			<Logos />
 			<Contact bgGreen={true} />

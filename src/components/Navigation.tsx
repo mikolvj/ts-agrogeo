@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
-import { Typography, Button, Stack } from '@mui/material';
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
 import SwipeableDrawer from '@mui/material/SwipeableDrawer';
 import List from '@mui/material/List';
@@ -57,28 +59,36 @@ const Navigation: React.FC<NavigationProps> = ({ isHero }) => {
 			}`}
 		>
 			<Stack className='hidden sm:flex flex-row items-center justify-between w-full max-w-7xl mx-auto'>
-				<HeaderLogo isScroll={isScroll} isHero={isHero} />
+				<HeaderLogo isScroll={isScroll} />
 				<ul className='flex flex-row items-center justify-beetwen'>
 					<NavLink to='/'>
 						<li className='menuItem'>
 							<Typography variant='button'>start</Typography>
 						</li>
 					</NavLink>
-					<li className='menuItem'>
-						<Typography variant='button'>usługi</Typography>
-					</li>
-					<li className='menuItem'>
-						<Typography variant='button'>o mnie</Typography>
-					</li>
+					<NavLink to='/uslugi'>
+						<li className='menuItem'>
+							<Typography variant='button'>usługi</Typography>
+						</li>
+					</NavLink>
+					<NavLink to='/o-mnie'>
+						<li className='menuItem'>
+							<Typography variant='button'>o mnie</Typography>
+						</li>
+					</NavLink>
 					<NavLink to='/kontakt'>
-						<Button variant='contained' component='li' className='ml-4'>
+						<Button
+							variant='contained'
+							component='li'
+							className='ml-4 text-white'
+						>
 							kontakt
 						</Button>
 					</NavLink>
 				</ul>
 			</Stack>
 			<Stack className='flex flex-row items-center justify-between sm:hidden h-full'>
-				<HeaderLogo isScroll={isScroll} isHero={isHero} />
+				<HeaderLogo isScroll={isScroll} />
 				<Button
 					onClick={toggleDrawer(true)}
 					className='hover:bg-transparent p-4 -mt-4 -mr-4'
@@ -125,37 +135,41 @@ const Navigation: React.FC<NavigationProps> = ({ isHero }) => {
 											gutterBottom
 											variant='h5'
 											align='center'
-											className='w-full'
+											className='w-full font-bold'
 										>
 											start
 										</Typography>
 									</ListItemButton>
 								</ListItem>
 							</NavLink>
-							<ListItem disablePadding>
-								<ListItemButton className='hover:bg-white mb-4'>
-									<Typography
-										gutterBottom
-										variant='h5'
-										align='center'
-										className='w-full'
-									>
-										usługi
-									</Typography>
-								</ListItemButton>
-							</ListItem>
-							<ListItem disablePadding>
-								<ListItemButton className='hover:bg-white mb-4'>
-									<Typography
-										gutterBottom
-										variant='h5'
-										align='center'
-										className='w-full'
-									>
-										o mnie
-									</Typography>
-								</ListItemButton>
-							</ListItem>
+							<NavLink to='/uslugi'>
+								<ListItem disablePadding>
+									<ListItemButton className='hover:bg-white mb-4'>
+										<Typography
+											gutterBottom
+											variant='h5'
+											align='center'
+											className='w-full font-bold'
+										>
+											usługi
+										</Typography>
+									</ListItemButton>
+								</ListItem>
+							</NavLink>
+							<NavLink to='/o-mnie'>
+								<ListItem disablePadding>
+									<ListItemButton className='hover:bg-white mb-4'>
+										<Typography
+											gutterBottom
+											variant='h5'
+											align='center'
+											className='w-full font-bold'
+										>
+											o mnie
+										</Typography>
+									</ListItemButton>
+								</ListItem>
+							</NavLink>
 							<NavLink to='/kontakt'>
 								<ListItem disablePadding>
 									<ListItemButton className='hover:bg-white mb-4'>
@@ -163,7 +177,7 @@ const Navigation: React.FC<NavigationProps> = ({ isHero }) => {
 											gutterBottom
 											variant='h5'
 											align='center'
-											className='w-full'
+											className='w-full font-bold'
 										>
 											kontakt
 										</Typography>
