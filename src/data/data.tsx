@@ -43,12 +43,12 @@ export const home: {
 			},
 			{
 				title: 'Druk wielkoformatowy',
-				copy: 'Aktualizacja Ewidencji Gruntów i Budynków, pomiary sytuacyjno-wysokościowe, wytyczenia.',
+				copy: 'Wydruk map, opracowań technicznych oraz innych na formatach niestandardowych do formatu A0.',
 			},
 		],
 	},
 	pros: {
-		title: 'Twoje zlecenie jest na nas ważne',
+		title: 'Twoje zlecenie jest dla nas ważne',
 		copy: 'Najważniejsze cechy wyróżniające naszą pracę',
 		cards: [
 			{
