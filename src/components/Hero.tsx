@@ -9,7 +9,7 @@ const Hero: React.FC = () => {
 	return (
 		<Paper
 			square
-			className='bg-hero bg-no-repeat bg-cover bg-center bg-fixed h-screen w-full -mt-[7.2rem] sm:-mt-[6.6rem]'
+			className='bg-heroMobile sm:bg-hero bg-no-repeat bg-cover bg-center bg-fixed h-screen w-full -mt-[7.2rem] md:-mt-[6.6rem]'
 		>
 			<Stack className='flex-column justify-center items-center sm:items-start h-full w-full sm:w-4/5 max-w-7xl mx-auto p-4 sm:p-16 text-center'>
 				{home.hero.map((copy: string, index) => (

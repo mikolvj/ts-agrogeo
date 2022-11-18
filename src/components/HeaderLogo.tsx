@@ -13,7 +13,7 @@ const HeaderLogo: React.FC<HeaderLogoProps> = ({ isScroll }) => {
 					src={require('assets/img/agrogeo.png')}
 					alt='logo'
 					className={`${
-						isScroll ? 'mt-0' : '-mt-3'
+						isScroll ? '-mt-0' : '-mt-3'
 					} sm:mt-0 h-10 mx-auto my-auto`}
 				/>
 			</Stack>

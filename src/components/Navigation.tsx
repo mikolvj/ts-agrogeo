@@ -58,7 +58,7 @@ const Navigation: React.FC<NavigationProps> = ({ isHero }) => {
 					: ''
 			}`}
 		>
-			<Stack className='hidden sm:flex flex-row items-center justify-between w-full max-w-7xl mx-auto'>
+			<Stack className='hidden md:flex flex-row items-center justify-between w-full max-w-7xl mx-auto'>
 				<HeaderLogo isScroll={isScroll} />
 				<ul className='flex flex-row items-center justify-beetwen'>
 					<NavLink to='/'>
@@ -87,7 +87,7 @@ const Navigation: React.FC<NavigationProps> = ({ isHero }) => {
 					</NavLink>
 				</ul>
 			</Stack>
-			<Stack className='flex flex-row items-center justify-between sm:hidden h-full'>
+			<Stack className='flex flex-row items-center justify-between md:hidden h-full'>
 				<HeaderLogo isScroll={isScroll} />
 				<Button
 					onClick={toggleDrawer(true)}
@@ -106,7 +106,7 @@ const Navigation: React.FC<NavigationProps> = ({ isHero }) => {
 								: !isHero && isScroll
 								? 'text-black mt-2'
 								: ''
-						}`}
+						} pt-1`}
 					/>
 				</Button>
 				<SwipeableDrawer
@@ -123,7 +123,7 @@ const Navigation: React.FC<NavigationProps> = ({ isHero }) => {
 					>
 						<CloseIcon
 							fontSize='large'
-							className={`absolute right-8 text-black z-1000 ${
+							className={`absolute pt-1 right-8 text-black z-1000 ${
 								isScroll ? 'top-5' : 'top-8'
 							}`}
 						/>

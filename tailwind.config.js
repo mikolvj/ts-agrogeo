@@ -11,7 +11,9 @@ module.exports = {
 			},
 			backgroundImage: {
 				hero: "url('assets/img/hero.png')",
+				heroMobile: "url('assets/img/hero-m.jpg')",
 				section: "url('assets/img/section.png')",
+				sectionMobile: "url('assets/img/section-m.jpg')",
 				profile: "url('assets/img/profile.jpg')",
 				service1: "url('assets/img/service1.jpeg')",
 				service2: "url('assets/img/service2.jpeg')",
