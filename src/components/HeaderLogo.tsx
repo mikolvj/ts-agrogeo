@@ -8,7 +8,7 @@ interface HeaderLogoProps {
 const HeaderLogo: React.FC<HeaderLogoProps> = ({ isScroll }) => {
 	return (
 		<NavLink to='/'>
-			<Stack className='text-5xl font-bold'>
+			<Stack className='text-5xl font-bold cursor-pointer duration-200 hover:opacity-80'>
 				<img
 					src={require('assets/img/agrogeo.png')}
 					alt='logo'

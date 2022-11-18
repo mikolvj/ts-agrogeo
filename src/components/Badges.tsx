@@ -23,7 +23,7 @@ const Badges: React.FC = () => {
 		<Grid container className='max-w-5xl mx-auto'>
 			{home.pros.cards.map((badge, index) => (
 				<Grid item xs={10} md={4} key={index} className='mx-auto'>
-					<Stack className='p-4 mb-12 flex flex-col justify-center items-center'>
+					<Stack className='p-4 mb-8 flex flex-col justify-center items-center'>
 						<Avatar className='bg-primary h-16 w-16'>
 							{chooseIcon(badge.icon)}
 						</Avatar>

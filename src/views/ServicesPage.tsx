@@ -27,6 +27,7 @@ const ServicesPage: React.FC = () => {
 					key={index}
 				/>
 			))}
+			<div className='h-6' />
 			<Footer />
 		</>
 	);

@@ -55,8 +55,8 @@ const ServicesCard: React.FC<ServicesCardProps> = ({
 	imgIndex,
 }) => {
 	return (
-		<Box className='text-left m-4 mb-16 max-w-full sm:max-w-[60rem] p-4 mx-auto'>
-			<Card className='md:min-h-[10rem] lg:min-h-[13rem] flex flex-col sm:flex-row items-start justify-start bg-slate-50'>
+		<Box className='text-left m-6 max-w-full sm:max-w-[60rem] p-6 mx-auto'>
+			<Card className='md:min-h-[10rem] lg:min-h-[13rem] flex flex-col sm:flex-row items-start justify-start bg-slate-50 mb-8'>
 				<>
 					<ImgBox
 						imgIndex={imgIndex}

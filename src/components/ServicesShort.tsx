@@ -15,17 +15,18 @@ const ServicesShort: React.FC = () => {
 		<Paper
 			elevation={0}
 			square
-			className='w-full mt-0 mb-16 flex flex-col justify-center items-center'
+			className='w-full my-0 mb-2 flex flex-col justify-center items-center'
 		>
-			<Stack direction='column' justifyContent='center' alignItems='center'>
+			<Stack className='flex flex-col justify-center items-center mt-24'>
 				<Typography
 					variant='h4'
 					component='h2'
-					className='font-bold max-w-2xl text-center mt-24'
+					gutterBottom
+					className='font-bold max-w-2xl text-center '
 				>
 					{home.servicesShort.title}
 				</Typography>
-				<Typography className='text-slate-600 mt-2 mb-12 px-8 max-w-2xl text-center'>
+				<Typography  className='text-slate-600 mb-12 px-8 max-w-2xl text-center'>
 					{home.servicesShort.copy}
 				</Typography>
 			</Stack>
@@ -56,7 +57,7 @@ const ServicesShort: React.FC = () => {
 				<Button
 					variant='contained'
 					color='primary'
-					className='bg-primary text-white mx-auto'
+					className='bg-primary text-white mx-auto mb-24'
 				>
 					zobacz więcej
 				</Button>

@@ -5,8 +5,8 @@ import { home } from 'data/data';
 
 const Logos: React.FC = () => {
 	return (
-		<Container className='w-full mt-24'>
-			<Stack className=' text-black justify-center items-center'>
+		<Container className='w-full py-12'>
+			<Stack className=' text-black justify-center items-center mt-12'>
 				<Typography
 					variant='h4'
 					component='h2'
@@ -15,10 +15,10 @@ const Logos: React.FC = () => {
 				>
 					{home.logos.title}
 				</Typography>
-				<Typography className='text-slate-600 mb-12 text-center'>
+				<Typography className='text-slate-600 text-center'>
 					{home.logos.copy}
 				</Typography>
-				<Stack className='justify-center items-center flex-row flex-wrap gap-4 max-w-full overflow-hidden mb-12'>
+				<Stack className='justify-center items-center flex-row flex-wrap gap-4 max-w-full overflow-hidden mt-12'>
 					<img
 						src={require('assets/img/logo-1.png')}
 						alt='logo powiatu kępińskiego'

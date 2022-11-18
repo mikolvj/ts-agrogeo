@@ -70,7 +70,7 @@ export const home: {
 	},
 	logos: {
 		title: 'Zaufali nam',
-		copy: 'Wybrane przykłady firm i instytucji, z którymi stale współpracujemy',
+		copy: 'Wybrane firmy i instytucje, z którymi stale współpracujemy',
 	},
 };
 
@@ -165,7 +165,8 @@ export const about: {
 	};
 	testimonials: {
 		title: string;
-		quotes: { copy: string; author: string }[];}
+		quotes: { copy: string; author: string }[];
+	};
 	disclaimer: string;
 } = {
 	cv: {
@@ -193,5 +194,5 @@ export const about: {
 		],
 	},
 	disclaimer:
-		'Na życzenie Inwestorów istnieje możliwość udostepnienia opieczętowanych i podpisanych skanów powyższych referencji.'
+		'Na życzenie Inwestorów istnieje możliwość udostepnienia opieczętowanych i podpisanych skanów powyższych referencji.',
 };
