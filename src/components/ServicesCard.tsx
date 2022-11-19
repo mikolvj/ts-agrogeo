@@ -4,18 +4,11 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
+import {ServicesCards} from 'data/data'
 
 interface ServicesCardProps {
 	mirror?: boolean;
-	title: string;
-	copyLine1: string;
-	isLine1Bold?: boolean;
-	copyLine2?: string;
-	isLine2Bold?: boolean;
-	copyLine3?: string;
-	isLine3Bold?: boolean;
-	copyLine4?: string;
-	isLine4Bold?: boolean;
+	data: ServicesCards;
 	imgIndex: number;
 }
 
@@ -43,15 +36,17 @@ const ImgBox: React.FC<ImgBoxProps> = ({ addStyles, imgIndex }) => {
 
 const ServicesCard: React.FC<ServicesCardProps> = ({
 	mirror,
-	title,
-	copyLine1,
-	copyLine2,
-	copyLine3,
-	copyLine4,
-	isLine1Bold,
-	isLine2Bold,
-	isLine3Bold,
-	isLine4Bold,
+	data: {
+		title,
+		copyLine1,
+		copyLine2,
+		copyLine3,
+		copyLine4,
+		isLine1Bold,
+		isLine2Bold,
+		isLine3Bold,
+		isLine4Bold,
+	},
 	imgIndex,
 }) => {
 	return (

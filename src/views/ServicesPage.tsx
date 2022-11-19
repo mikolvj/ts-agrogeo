@@ -11,17 +11,9 @@ const ServicesPage: React.FC = () => {
 			<Typography variant='h4' className='mx-auto text-center mt-12 font-bold'>
 				Zakres usług
 			</Typography>
-			{services.cards.map((item, index) => (
+			{services.cards.map((data, index) => (
 				<ServicesCard
-					title={item.title}
-					copyLine1={item.copyLine1}
-					copyLine2={item.copyLine2}
-					copyLine3={item.copyLine3}
-					copyLine4={item.copyLine4}
-					isLine1Bold={item.isLine1Bold}
-					isLine2Bold={item.isLine2Bold}
-					isLine3Bold={item.isLine3Bold}
-					isLine4Bold={item.isLine4Bold}
+					data={data}
 					mirror={index % 2 !== 0}
 					imgIndex={index}
 					key={index}

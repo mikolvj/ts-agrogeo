@@ -96,11 +96,8 @@ export const contact: {
 	email: 'kontakt@agrogeo.pl',
 };
 
-export const services: {
+export interface ServicesCards {
 	title: string;
-	copy?: string;
-	cards: {
-		title: string;
 		copyLine1: string;
 		isLine1Bold?: boolean;
 		copyLine2?: string;
@@ -109,7 +106,12 @@ export const services: {
 		isLine3Bold?: boolean;
 		copyLine4?: string;
 		isLine4Bold?: boolean;
-	}[];
+}
+
+export const services: {
+	title: string;
+	copy?: string;
+	cards: ServicesCards[];
 } = {
 	title: 'Zakres usług',
 	cards: [
