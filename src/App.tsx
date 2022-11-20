@@ -1,17 +1,19 @@
+import React, { Suspense } from 'react';
 import { StyledEngineProvider, CssBaseline } from '@mui/material';
 import { ThemeProvider } from '@mui/material/styles';
 import theme from 'assets/theme';
-import HomePage from 'views/HomePage';
-import ContactPage from 'views/ContactPage';
-import ServicesPage from 'views/ServicesPage';
 import {
 	BrowserRouter as Router,
 	Routes,
 	Route,
 	useLocation,
 } from 'react-router-dom';
-import AboutPage from 'views/AboutPage';
 import { useLayoutEffect } from 'react';
+
+const HomePage = React.lazy(() => import('views/HomePage'));
+const ServicesPage = React.lazy(() => import('views/ServicesPage'));
+const AboutPage = React.lazy(() => import('views/AboutPage'));
+const ContactPage = React.lazy(() => import('views/ContactPage'));
 
 interface WrapperProps {
 	children: JSX.Element;
@@ -32,12 +34,14 @@ const App: React.FC = () => {
 				<ThemeProvider theme={theme}>
 					<CssBaseline />
 					<ScrollToTop>
-						<Routes>
-							<Route path='/' element={<HomePage />} />
-							<Route path='/kontakt' element={<ContactPage />} />
-							<Route path='/uslugi' element={<ServicesPage />} />
-							<Route path='/o-mnie' element={<AboutPage />} />
-						</Routes>
+						<Suspense fallback={<div>Loading...</div>}>
+							<Routes>
+								<Route path='/' element={<HomePage />} />
+								<Route path='/kontakt' element={<ContactPage />} />
+								<Route path='/uslugi' element={<ServicesPage />} />
+								<Route path='/o-mnie' element={<AboutPage />} />
+							</Routes>
+						</Suspense>
 					</ScrollToTop>
 				</ThemeProvider>
 			</StyledEngineProvider>
