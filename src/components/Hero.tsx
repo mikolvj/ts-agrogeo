@@ -6,7 +6,6 @@ import { home } from 'data/data';
 import { NavLink } from 'react-router-dom';
 
 const Hero: React.FC = () => {
-
 	return (
 		<Paper
 			square

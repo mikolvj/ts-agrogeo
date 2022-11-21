@@ -10,9 +10,9 @@ module.exports = {
 				secondary: '#5bca8b',
 			},
 			backgroundImage: {
-				hero: "url('assets/img/hero.png')",
+				hero: "url('assets/img/hero.jpg')",
 				heroMobile: "url('assets/img/hero-m.jpg')",
-				section: "url('assets/img/section.png')",
+				section: "url('assets/img/section.jpg')",
 				sectionMobile: "url('assets/img/section-m.jpg')",
 				profile: "url('assets/img/profile.jpg')",
 				service1: "url('assets/img/service1.jpeg')",

@@ -4,7 +4,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
-import {ServicesCards} from 'data/data'
+import { ServicesCards } from 'data/data';
 
 interface ServicesCardProps {
 	mirror?: boolean;
@@ -36,17 +36,7 @@ const ImgBox: React.FC<ImgBoxProps> = ({ addStyles, imgIndex }) => {
 
 const ServicesCard: React.FC<ServicesCardProps> = ({
 	mirror,
-	data: {
-		title,
-		copyLine1,
-		copyLine2,
-		copyLine3,
-		copyLine4,
-		isLine1Bold,
-		isLine2Bold,
-		isLine3Bold,
-		isLine4Bold,
-	},
+	data: { title, copy },
 	imgIndex,
 }) => {
 	return (
@@ -55,7 +45,7 @@ const ServicesCard: React.FC<ServicesCardProps> = ({
 				<>
 					<ImgBox
 						imgIndex={imgIndex}
-						addStyles={`hidden ${mirror ? 'sm:block' : ''}`}
+						addStyles={`hidden ${mirror && 'sm:block'}`}
 					/>
 					<CardContent className='flex justify-between sm:w-2/3 gap-16 self-stretch p-4'>
 						<Box className='w-full h-full'>
@@ -67,33 +57,15 @@ const ServicesCard: React.FC<ServicesCardProps> = ({
 								{title}
 							</Typography>
 							<Divider variant='fullWidth' className='my-4' />
-							<Typography
-								gutterBottom
-								variant='body2'
-								className={`${isLine1Bold ? 'font-bold' : ''}`}
-							>
-								{copyLine1}
-							</Typography>
-							<Typography
-								gutterBottom
-								variant='body2'
-								className={`${isLine2Bold ? 'font-bold' : ''}`}
-							>
-								{copyLine2}
-							</Typography>
-							<Typography
-								gutterBottom
-								variant='body2'
-								className={`${isLine3Bold ? 'font-bold' : ''}`}
-							>
-								{copyLine3}
-							</Typography>
-							<Typography
-								variant='body2'
-								className={`${isLine4Bold ? 'font-bold' : ''}`}
-							>
-								{copyLine4}
-							</Typography>
+							{copy.map((item) => (
+								<Typography
+									gutterBottom
+									variant='body2'
+									className={`${item.isBold && 'font-bold'}`}
+								>
+									{item.content}
+								</Typography>
+							))}
 						</Box>
 					</CardContent>
 					<ImgBox

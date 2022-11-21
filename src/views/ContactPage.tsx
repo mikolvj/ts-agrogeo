@@ -5,8 +5,10 @@ import Navigation from 'components/Navigation';
 const ContactPage: React.FC = () => {
 	return (
 		<>
-			<Navigation isHero={false} />
-			<Contact bgGreen={false} />
+			<Navigation isTransparent={false} />
+			<div className='min-h-[calc(100vh-9rem)]'>
+				<Contact bgGreen={false} />
+			</div>
 			<Footer />
 		</>
 	);

@@ -9,7 +9,7 @@ import ServicesShort from 'components/ServicesShort';
 const HomePage: React.FC = () => {
 	return (
 		<>
-			<Navigation isHero={true} />
+			<Navigation isTransparent={true} />
 			<Hero />
 			<ServicesShort />
 			<Pros />

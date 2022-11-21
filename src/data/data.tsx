@@ -1,4 +1,6 @@
-export type Icons = 'favorite' | 'watch' | 'star';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import StarBorderIcon from '@mui/icons-material/StarBorder';
+import ScheduleIcon from '@mui/icons-material/Schedule';
 
 export const home: {
 	hero: string[];
@@ -14,7 +16,7 @@ export const home: {
 		title: string;
 		copy: string;
 		cards: {
-			icon: Icons;
+			icon: JSX.Element;
 			title: string;
 			copy: string;
 		}[];
@@ -24,7 +26,12 @@ export const home: {
 		copy: string;
 	};
 } = {
-	hero: ['Klasyfikacja gruntów', 'Geodezja', 'Badania gleby'],
+	hero: [
+		'Klasyfikacja gruntów',
+		'Geodezja',
+		'Badania gleby',
+		'Druk wielkoformatowy',
+	],
 	servicesShort: {
 		title: 'Zakres usług',
 		copy: 'Większość z oferowanych usług realizujemy na terenie całej Polski',
@@ -43,7 +50,7 @@ export const home: {
 			},
 			{
 				title: 'Druk wielkoformatowy',
-				copy: 'Wydruk map, opracowań technicznych oraz innych na formatach niestandardowych do formatu A0.',
+				copy: 'Wydruk map, opracowań technicznych oraz innych na formatach niestandardowych do formatu A0+.',
 			},
 		],
 	},
@@ -52,17 +59,17 @@ export const home: {
 		copy: 'Najważniejsze cechy wyróżniające naszą pracę',
 		cards: [
 			{
-				icon: 'favorite',
+				icon: <FavoriteBorderIcon fontSize='large' />,
 				title: 'sumiennie',
 				copy: 'Wszystkie zlecenia realizujemy z pasją i zgodnie ze sztuką',
 			},
 			{
-				icon: 'star',
+				icon: <StarBorderIcon fontSize='large' />,
 				title: 'profesjonalnie',
 				copy: 'W pracy wykorzystujemy nowoczesny, renomowany sprzęt',
 			},
 			{
-				icon: 'watch',
+				icon: <ScheduleIcon fontSize='large' />,
 				title: 'terminowo',
 				copy: 'Bardzo ważna jest dla nas realizacja w wyznaczonym czasie',
 			},
@@ -98,14 +105,10 @@ export const contact: {
 
 export interface ServicesCards {
 	title: string;
-		copyLine1: string;
-		isLine1Bold?: boolean;
-		copyLine2?: string;
-		isLine2Bold?: boolean;
-		copyLine3?: string;
-		isLine3Bold?: boolean;
-		copyLine4?: string;
-		isLine4Bold?: boolean;
+	copy: {
+		content: string;
+		isBold?: boolean;
+	}[];
 }
 
 export const services: {
@@ -117,37 +120,65 @@ export const services: {
 	cards: [
 		{
 			title: 'Geodezja',
-			copyLine1:
-				'Oferta prac geodezyjnych obejmuje podstawowe pomiary podczas realizacji prac budowlanych oraz prowadzenie formalności mających na celu zmiany w bazie danych Ewidencji Gruntów i Budynków. Przeprowadzane są prace terenowe z użyciem sprzętu typu GPS, niwelator. Prace kameralne obejmują prace w programach C-Geo, Geo-Info.',
-			copyLine2: '•aktualizacja Ewidencji Gruntów i Budynków',
-			isLine2Bold: true,
-			copyLine3: '•pomiary sytuacyjno-wysokościowe',
-			isLine3Bold: true,
-			copyLine4: '•wytyczenia',
-			isLine4Bold: true,
+			copy: [
+				{
+					content:
+						'Oferta prac geodezyjnych obejmuje podstawowe pomiary podczas realizacji prac budowlanych oraz prowadzenie formalności mających na celu zmiany w bazie danych Ewidencji Gruntów i Budynków. Przeprowadzane są prace terenowe z użyciem sprzętu typu GPS, niwelator. Prace kameralne obejmują prace w programach C-Geo, Geo-Info.',
+				},
+				{
+					content: '•aktualizacja Ewidencji Gruntów i Budynków',
+					isBold: true,
+				},
+				{
+					content: '•pomiary sytuacyjno-wysokościowe',
+					isBold: true,
+				},
+				{
+					content: '•wytyczenia',
+					isBold: true,
+				},
+			],
 		},
 		{
 			title: 'Badania gruntu',
-			copyLine1:
-				'Działania z zakresu badania gleby na zwartość: wapna, magnezu, fosforu, potasu (pH, Mg, P, K) oraz manganu, cynku, miedzi, żelaza.',
-			copyLine2:
-				'Prace przeprowadzane na gruncie mają na celu pobranie próbek reprezentatywnych poddawanych badaniom w Okręgowej Stacji Chemiczno-rolniczej. Wyniki pozwalają na analizę i dobranie odpowiednich ilości nawozów na konkretne działki czy sprecyzowane powierzchnie większych areałów.',
+			copy: [
+				{
+					content:
+						'Działania z zakresu badania gleby na zwartość: wapna, magnezu, fosforu, potasu (pH, Mg, P, K) oraz manganu, cynku, miedzi, żelaza.',
+				},
+				{
+					content:
+						'Prace przeprowadzane na gruncie mają na celu pobranie próbek reprezentatywnych poddawanych badaniom w Okręgowej Stacji Chemiczno-rolniczej. Wyniki pozwalają na analizę i dobranie odpowiednich ilości nawozów na konkretne działki czy sprecyzowane powierzchnie większych areałów.',
+				},
+			],
 		},
 		{
 			title: 'Klasyfikacja gruntów',
-			copyLine1: 'Zmiana klasy gruntu',
-			isLine1Bold: true,
-			copyLine2:
-				'Na podstawie przeprowadzonych prac terenowych i analizy dokumentów istniejących i zachowanych w Ośrodku Dokumentacji Geodezyjnej dokonuje się zmiany istniejącej klasy gruntu, np. klasy RIVa (grunt rolny klasy czwartej a) na faktyczną, czyli np. RV (grunt rolny klasy piątej). Klasa gruntu rolnego, a także łąk, pastwisk, lasów, ma znaczenie przy naliczaniu podatku.',
-			copyLine3: 'Aktualizacja użytku gruntowego zgodnie ze stanem faktycznym',
-			isLine3Bold: true,
-			copyLine4:
-				'Prostowanie niezgodności zapisów w Ewidencji Gruntów i Budynków z faktycznym stanem gruntu, czyli np. zmiana użytku drogowego na grunt rolny, zmiana użytków leśnych (Ls) na terenach wyłączonych z użytkowania leśnego, zmiana użytków budowlanych (B) na terenach należących do rolnika (w rozumieniu prawa) na Br (tereny rolne zabudowane). W każdym tym przypadku następuje istotna różnica w płaconym podatku od nieruchomości.',
+			copy: [
+				{ content: 'Zmiana klasy gruntu', isBold: true },
+				{
+					content:
+						'Na podstawie przeprowadzonych prac terenowych i analizy dokumentów istniejących i zachowanych w Ośrodku Dokumentacji Geodezyjnej dokonuje się zmiany istniejącej klasy gruntu, np. klasy RIVa (grunt rolny klasy czwartej a) na faktyczną, czyli np. RV (grunt rolny klasy piątej). Klasa gruntu rolnego, a także łąk, pastwisk, lasów, ma znaczenie przy naliczaniu podatku.',
+				},
+				{
+					content:
+						'Aktualizacja użytku gruntowego zgodnie ze stanem faktycznym',
+					isBold: true,
+				},
+				{
+					content:
+						'Prostowanie niezgodności zapisów w Ewidencji Gruntów i Budynków z faktycznym stanem gruntu, czyli np. zmiana użytku drogowego na grunt rolny, zmiana użytków leśnych (Ls) na terenach wyłączonych z użytkowania leśnego, zmiana użytków budowlanych (B) na terenach należących do rolnika (w rozumieniu prawa) na Br (tereny rolne zabudowane). W każdym tym przypadku następuje istotna różnica w płaconym podatku od nieruchomości.',
+				},
+			],
 		},
 		{
 			title: 'Druk wielkoformatowy',
-			copyLine1:
-				'Nasze biuro wyposażone jest w ploter wielkoformatowy, co daje nam możliwość świadczenia usług wydruku w formatach do A0 oraz w formatach niestandardowych.',
+			copy: [
+				{
+					content:
+						'Nasze biuro wyposażone jest w ploter wielkoformatowy, co daje nam możliwość świadczenia usług wydruku w formatach do A0+ oraz w formatach niestandardowych.',
+				},
+			],
 		},
 	],
 };
@@ -198,3 +229,26 @@ export const about: {
 	disclaimer:
 		'Na życzenie Inwestorów istnieje możliwość udostepnienia opieczętowanych i podpisanych skanów powyższych referencji.',
 };
+
+export const desktopNavItems = [
+	{
+		title: 'start',
+		url: '/',
+	},
+	{
+		title: 'usługi',
+		url: '/uslugi',
+	},
+	{
+		title: 'o mnie',
+		url: '/o-mnie',
+	},
+];
+
+export const mobileNavItems = [
+	...desktopNavItems,
+	{
+		title: 'kontakt',
+		url: '/kontakt',
+	},
+];

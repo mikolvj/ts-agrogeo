@@ -11,12 +11,13 @@ import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import HeaderLogo from './HeaderLogo';
 import { NavLink } from 'react-router-dom';
+import { desktopNavItems, mobileNavItems } from 'data/data';
 
 interface NavigationProps {
-	isHero: boolean;
+	isTransparent: boolean;
 }
 
-const Navigation: React.FC<NavigationProps> = ({ isHero }) => {
+const Navigation: React.FC<NavigationProps> = ({ isTransparent }) => {
 	const [isOpen, setIsOpen] = useState(false);
 	const [isScroll, setIsScroll] = useState(false);
 
@@ -46,36 +47,20 @@ const Navigation: React.FC<NavigationProps> = ({ isHero }) => {
 
 	return (
 		<Stack
-			className={`sticky top-0 px-8 sm:px-16 z-50 py-8 duration-300 delay-100  ${
-				isHero && !isScroll
-					? 'bg-transparent text-white'
-					: isHero && isScroll
-					? 'bg-white text-black py-3 shadow-md'
-					: !isHero && !isScroll
-					? 'bg-white text-black'
-					: !isHero && isScroll
-					? 'bg-white text-black py-3 shadow-md'
-					: ''
-			}`}
+			className={`sticky top-0 px-8 sm:px-16 z-50 py-8 duration-300 delay-100 ${
+				isTransparent ? 'bg-transparent text-white' : 'bg-white text-black'
+			} ${isScroll && 'bg-slate-50 text-black py-3 shadow-md'}`}
 		>
 			<Stack className='hidden md:flex flex-row items-center justify-between w-full max-w-7xl mx-auto'>
 				<HeaderLogo isScroll={isScroll} />
 				<ul className='flex flex-row items-center justify-beetwen'>
-					<NavLink to='/'>
-						<li className='menuItem'>
-							<Typography variant='button'>start</Typography>
-						</li>
-					</NavLink>
-					<NavLink to='/uslugi'>
-						<li className='menuItem'>
-							<Typography variant='button'>usługi</Typography>
-						</li>
-					</NavLink>
-					<NavLink to='/o-mnie'>
-						<li className='menuItem'>
-							<Typography variant='button'>o mnie</Typography>
-						</li>
-					</NavLink>
+					{desktopNavItems.map((item) => (
+						<NavLink to={item.url} key={item.title}>
+							<li className='menuItem'>
+								<Typography variant='button'>{item.title}</Typography>
+							</li>
+						</NavLink>
+					))}
 					<NavLink to='/kontakt'>
 						<Button
 							variant='contained'
@@ -95,18 +80,9 @@ const Navigation: React.FC<NavigationProps> = ({ isHero }) => {
 				>
 					<MenuIcon
 						fontSize='large'
-						className={`${
-							// isScroll || !isHero ? 'text-black mt-2' : 'text-white'
-							isHero && !isScroll
-								? 'text-white'
-								: isHero && isScroll
-								? 'text-black mt-2'
-								: !isHero && !isScroll
-								? 'text-black'
-								: !isHero && isScroll
-								? 'text-black mt-2'
-								: ''
-						} pt-1`}
+						className={`pt-2 text-black ${isTransparent && 'text-white/100'} ${
+							isScroll && 'text-black/100 mt-2'
+						}`}
 					/>
 				</Button>
 				<SwipeableDrawer
@@ -123,67 +99,27 @@ const Navigation: React.FC<NavigationProps> = ({ isHero }) => {
 					>
 						<CloseIcon
 							fontSize='large'
-							className={`absolute pt-1 right-8 text-black z-1000 ${
+							className={`absolute pt-2 right-8 text-black z-1000 ${
 								isScroll ? 'top-5' : 'top-8'
 							}`}
 						/>
 						<List className='mt-40 ml-4 uppercase'>
-							<NavLink to='/'>
-								<ListItem disablePadding>
-									<ListItemButton className='hover:bg-white mb-4'>
-										<Typography
-											gutterBottom
-											variant='h5'
-											align='center'
-											className='w-full font-bold'
-										>
-											start
-										</Typography>
-									</ListItemButton>
-								</ListItem>
-							</NavLink>
-							<NavLink to='/uslugi'>
-								<ListItem disablePadding>
-									<ListItemButton className='hover:bg-white mb-4'>
-										<Typography
-											gutterBottom
-											variant='h5'
-											align='center'
-											className='w-full font-bold'
-										>
-											usługi
-										</Typography>
-									</ListItemButton>
-								</ListItem>
-							</NavLink>
-							<NavLink to='/o-mnie'>
-								<ListItem disablePadding>
-									<ListItemButton className='hover:bg-white mb-4'>
-										<Typography
-											gutterBottom
-											variant='h5'
-											align='center'
-											className='w-full font-bold'
-										>
-											o mnie
-										</Typography>
-									</ListItemButton>
-								</ListItem>
-							</NavLink>
-							<NavLink to='/kontakt'>
-								<ListItem disablePadding>
-									<ListItemButton className='hover:bg-white mb-4'>
-										<Typography
-											gutterBottom
-											variant='h5'
-											align='center'
-											className='w-full font-bold'
-										>
-											kontakt
-										</Typography>
-									</ListItemButton>
-								</ListItem>
-							</NavLink>
+							{mobileNavItems.map((item) => (
+								<NavLink to={item.url} key={item.title}>
+									<ListItem disablePadding>
+										<ListItemButton className='hover:bg-white mb-4'>
+											<Typography
+												gutterBottom
+												variant='h5'
+												align='center'
+												className='w-full font-bold'
+											>
+												{item.title}
+											</Typography>
+										</ListItemButton>
+									</ListItem>
+								</NavLink>
+							))}
 						</List>
 					</Box>
 				</SwipeableDrawer>

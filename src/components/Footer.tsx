@@ -6,25 +6,12 @@ import Link from '@mui/material/Link';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import EmailIcon from '@mui/icons-material/Email';
 import { contact } from 'data/data';
-import { useState, useEffect } from 'react';
 
 const currentYear = new Date().getFullYear();
 
 const Footer: React.FC = () => {
-	const [isHigherThanScreen, setIsHigherThanScreen] = useState<boolean>();
-
-	useEffect(() => {
-		document.body.scrollHeight > window.innerHeight
-			? setIsHigherThanScreen(true)
-			: setIsHigherThanScreen(false);
-	}, []);
-
 	return (
-		<Paper
-			className={`h-10 text-white bg-primary ${
-				isHigherThanScreen ? '' : 'absolute bottom-0 w-full'
-			}`}
-		>
+		<Paper className={`h-10 text-white bg-primary `}>
 			<Stack className='flex-row items-center w-full lg:w-3/5 justify-center sm:justify-between h-full mx-auto px-8 lg:px-0 max-w-4xl'>
 				<Typography variant='subtitle2' className='hidden sm:flex'>
 					&#169; {currentYear} {contact.nameLine1} {contact.nameLine2}

@@ -7,7 +7,7 @@ import { services } from 'data/data';
 const ServicesPage: React.FC = () => {
 	return (
 		<>
-			<Navigation isHero={false} />
+			<Navigation isTransparent={false} />
 			<Typography variant='h4' className='mx-auto text-center mt-12 font-bold'>
 				Zakres usług
 			</Typography>

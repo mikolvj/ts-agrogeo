@@ -2,6 +2,9 @@ import Container from '@mui/material/Container';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { home } from 'data/data';
+import logoFirst from 'assets/img/logo-1.png';
+import logoSecond from 'assets/img/logo-2.png';
+import logoThird from 'assets/img/logo-3.png';
 
 const Logos: React.FC = () => {
 	return (
@@ -20,20 +23,12 @@ const Logos: React.FC = () => {
 				</Typography>
 				<Stack className='justify-center items-center flex-row flex-wrap gap-4 max-w-full overflow-hidden mt-12'>
 					<img
-						src={require('assets/img/logo-1.png')}
+						src={logoFirst}
 						alt='logo powiatu kępińskiego'
 						className='logoItem'
 					/>
-					<img
-						src={require('assets/img/logo-3.png')}
-						alt='herb Ostrzeszowa'
-						className='logoItem'
-					/>
-					<img
-						src={require('assets/img/logo-2.png')}
-						alt='logo gminy Gilowice'
-						className='logoItem'
-					/>
+					<img src={logoSecond} alt='herb Ostrzeszowa' className='logoItem' />
+					<img src={logoThird} alt='logo gminy Gilowice' className='logoItem' />
 				</Stack>
 			</Stack>
 		</Container>

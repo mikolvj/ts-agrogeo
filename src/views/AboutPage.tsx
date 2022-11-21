@@ -9,13 +9,15 @@ import { about } from 'data/data';
 const AboutPage: React.FC = () => {
 	return (
 		<>
-			<Navigation isHero={false} />
+			<Navigation isTransparent={false} />
 			<Stack className='flex flex-col items-center w-full mt-12'>
 				<Typography variant='h4' className='mb-12 font-bold'>
 					{about.cv.title}
 				</Typography>
 				<AboutMe />
-				<Typography variant='h4' className='font-bold'>{about.testimonials.title}</Typography>
+				<Typography variant='h4' className='font-bold'>
+					{about.testimonials.title}
+				</Typography>
 				{about.testimonials.quotes.map((item, index) => (
 					<Testimonial copy={item.copy} author={item.author} key={index} />
 				))}
