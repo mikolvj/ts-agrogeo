@@ -9,7 +9,7 @@ const Pros: React.FC = () => {
 	return (
 		<Paper
 			square
-			className='bg-sectionMobile sm:bg-section bg-no-repeat bg-cover bg-center bg-fixed w-full'
+			className='bg-sectionMobile sm:bg-section bg-no-repeat bg-cover bg-center sm:bg-fixed w-full'
 		>
 			<Container className=' w-full mt-0 py-12'>
 				<Stack className='justify-center items-center my-12 text-white'>
