@@ -1,6 +1,7 @@
 import React, { Suspense } from 'react';
 import { StyledEngineProvider, CssBaseline } from '@mui/material';
 import { ThemeProvider } from '@mui/material/styles';
+import HourglassBottomIcon from '@mui/icons-material/HourglassBottom';
 import theme from 'assets/theme';
 import {
 	BrowserRouter as Router,
@@ -34,7 +35,13 @@ const App: React.FC = () => {
 				<ThemeProvider theme={theme}>
 					<CssBaseline />
 					<ScrollToTop>
-						<Suspense fallback={<div>Loading...</div>}>
+						<Suspense
+							fallback={
+								<div className='w-screen h-screen flex items-center justify-center'>
+									<HourglassBottomIcon />
+								</div>
+							}
+						>
 							<Routes>
 								<Route path='/' element={<HomePage />} />
 								<Route path='/kontakt' element={<ContactPage />} />
